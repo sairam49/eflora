@@ -6,7 +6,7 @@
   <div>
   <%= f.label :area%>
   <%= f.select(:area,
-               options_for_select([ ['0-3000sqm','1'], ['3000-6000sqm','2'], ['>6000sqm','3'] ]))%>
+               options_for_select(Design::VALUES_FOR_AREAS)) %>
 </div>
 <br/>
 <br/>
@@ -14,7 +14,7 @@
 <div>
   <%= f.label :cost%>
   <%= f.select(:cost ,
-               options_for_select([ ['0-2000Rs','1'], ['2000-5000Rs','2'],['>5000Rs','3'] ]))%>
+               options_for_select(Design::VALUES_FOR_COST))%>
 
   </div>
   <br/>

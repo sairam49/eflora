@@ -3,8 +3,6 @@ class DesignsController < ApplicationController
   end
 
   def show
-  @record = Design.where("area = ? AND cost = ? AND pond = ?",
-                           params[:design][:area],params[:design][:cost],params[:design][:pond]).first
-
+    @record = Design.suggest_pond(params[:design])
   end
 end

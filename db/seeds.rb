@@ -30,5 +30,5 @@ design_list = [
 ]
 
 design_list.each do |area, cost, pond, url |
-Design.create( area: area, cost: cost, pond: pond, url: url )
+  Design.where(area: area, cost: cost, pond: pond).first_or_create( area: area, cost: cost, pond: pond, url: url )
 end
