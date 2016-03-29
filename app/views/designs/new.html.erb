@@ -1,0 +1,34 @@
+<br/>
+<h2>Choose Values :</h2>
+<br/>
+<br/>
+<%= form_for(:design,url:designs_show_path) do |f|%>
+  <div>
+  <%= f.label :area%>
+  <%= f.select(:area,
+               options_for_select([ ['0-3000sqm','1'], ['3000-6000sqm','2'], ['>6000sqm','3'] ]))%>
+</div>
+<br/>
+<br/>
+<br/>
+<div>
+  <%= f.label :cost%>
+  <%= f.select(:cost ,
+               options_for_select([ ['0-2000Rs','1'], ['2000-5000Rs','2'],['>5000Rs','3'] ]))%>
+
+  </div>
+  <br/>
+  <br/>
+  <br/>
+  <div>
+    <%= f.label :pond%>
+    <%= f.select(:pond ,
+                 options_for_select([ ['Koi Pond','1'], ['Duck Pond','2'] ]))%>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+     <div>
+    <%= f.submit "Submit"%>
+     </div>
+<% end %>
