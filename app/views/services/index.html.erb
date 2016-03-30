@@ -1,0 +1,30 @@
+<h2>Services :</h2>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+
+ <% @services.each do |s| %>
+      <tr>
+        <td><%= s.service %></td>
+        <td><%= s.description %></td>
+      </tr>
+    <% end %>
+
+         </tbody>
+        </table>
+      </div><!--end of .table-responsive-->
+    </div>
+  </div>
+</div>
+
+

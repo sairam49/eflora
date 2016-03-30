@@ -1,0 +1,37 @@
+<br/>
+<h2>Add your products : </h2>
+<%= form_for(:product,url: products_create_path) do |f| %>
+
+  <div class="field">
+    <%= f.label :url %><br>
+    <%= f.text_field :url %>
+  </div>
+
+  <br/>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+
+  <br/>
+
+<div class="field">
+    <%= f.label :cost %><br>
+    <%= f.text_field :cost %>
+</div>
+
+<br/>
+
+<div class="field">
+    <%= f.label :quantity %><br>
+    <%= f.text_field :quantity %>
+  </div>
+
+  <br/>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>

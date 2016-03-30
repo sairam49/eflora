@@ -5,4 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :requests
+  has_many :services
+  has_one  :dashboard
+  has_many :products
 end

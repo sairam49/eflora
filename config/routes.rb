@@ -1,4 +1,28 @@
 Rails.application.routes.draw do
+  get 'products/new'
+
+  post 'products/create'
+
+  get 'products/edit'
+
+  get 'products/index'
+
+  get 'services/new'
+
+  get 'services/index'
+
+  post 'services/create'
+
+  get 'services/edit'
+
+  get 'dashboards/new'
+
+  get 'dashboards/edit'
+
+  post 'dashboards/create'
+
+  get 'dashboards/show'
+
   get 'requests/new'
   post 'requests/create'
 

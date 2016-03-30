@@ -1,0 +1,29 @@
+<h2>Profile : </h2>
+
+<p>
+<strong>Horticulturist:</strong>
+<%= @present.name%>
+</p>
+
+<p>
+  <strong>Qualification:</strong>
+  <%= @present.qualification %>
+</p>
+
+<p>
+  <strong>Contact:</strong>
+  <%= @present.contact %>
+</p>
+
+<br/>
+<%if current_user.horticulturist %>
+<%= link_to 'Add Services',services_new_path %>
+<br/>
+<%= link_to 'Add Products',products_new_path %>
+<%end%>
+<br/>
+<%= link_to 'My Services',services_index_path %>
+<br/>
+<%= link_to 'My Products',products_index_path %>
+<br/>
+<%= link_to 'Edit', dashboards_edit_path(@present) %>

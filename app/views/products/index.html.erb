@@ -1,0 +1,32 @@
+<h2>Products :</h2>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Product</th>
+              <th>Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+
+ <% @products.each do |p| %>
+      <tr>
+        <td><%= image_tag p.url, height:50, width:50%></td>
+        <td><%= p.title %></td>
+        <td><%= p.cost%></td>
+      </tr>
+    <% end %>
+
+         </tbody>
+        </table>
+      </div><!--end of .table-responsive-->
+    </div>
+  </div>
+</div>
+
+
