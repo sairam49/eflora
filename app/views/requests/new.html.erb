@@ -1,0 +1,17 @@
+<br/>
+<h2>Place Your Request :</h2>
+<br/>
+<br/>
+<%= form_for(:request,url:requests_create_path) do |f|%>
+
+  <div>
+    <%= f.label :order %>
+    <br/>
+    <%= f.text_area :order, placeholder: 'Enter Your Request...'%>
+    </div>
+<div>
+<%= f.submit "Request"%>
+    </div>
+
+
+<%end%>

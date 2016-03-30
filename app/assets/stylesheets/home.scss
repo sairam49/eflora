@@ -102,6 +102,10 @@ color: #fff;
   border-bottom-color: #fff;
 }
 
+input,textarea,select {
+color: #000;
+}
+
 @media (min-width: 768px) {
   .masthead-brand {
     float: left;

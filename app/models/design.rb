@@ -12,7 +12,6 @@ class Design < ActiveRecord::Base
     ['>5000INR', '3']
   ]
 
-  VALUES_FOR_POND = ['koi', 'duck']
 
   def self.suggest_pond search_params
     where("area = ? AND cost = ? AND pond = ?",

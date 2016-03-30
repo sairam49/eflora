@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'requests/new'
+  post 'requests/create'
+
+  get 'requests/index'
+
   get 'designs/new'
 
   post 'designs/show'
