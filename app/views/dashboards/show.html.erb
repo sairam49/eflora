@@ -1,18 +1,18 @@
 <h2>Profile : </h2>
 
 <p>
-<strong>Horticulturist:</strong>
-<%= @present.name%>
+<strong>Horiculturist:</strong>
+<%= @dashboard.name%>
 </p>
 
 <p>
   <strong>Qualification:</strong>
-  <%= @present.qualification %>
+  <%= @dashboard.qualification %>
 </p>
 
 <p>
   <strong>Contact:</strong>
-  <%= @present.contact %>
+  <%= @dashboard.contact %>
 </p>
 
 <br/>
@@ -26,4 +26,4 @@
 <br/>
 <%= link_to 'My Products',products_index_path %>
 <br/>
-<%= link_to 'Edit', dashboards_edit_path(@present) %>
+<%= link_to 'Edit', dashboards_edit_path(@dashboard) %>

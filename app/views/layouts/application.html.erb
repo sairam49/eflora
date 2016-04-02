@@ -8,7 +8,71 @@
 </head>
 <body>
 
-<%= yield %>
+  <div class="masthead clearfix">
+    <div class="inner">
+
+      <h3 class="masthead-brand">Eflora</h3>
+      <nav>
+        <ul class="nav masthead-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <% if user_signed_in? %>
+
+            <%if current_user.horticulturist%>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Profile
+                  <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Create Profile",dashboards_new_path %></li>
+                  <li><%= link_to "View Dashboard",dashboard_path(set_user_dashboard) %></li>
+                </ul>
+              </li>
+
+            <%end%>
+
+
+            <li><%= link_to "Design", designs_new_path %></li>
+
+
+
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Orders
+                <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Place Request Order",requests_new_path %></li>
+                <li><%= link_to "Agreement Order",'#'%></li>
+                <li><%= link_to "View Request Orders",requests_index_path %> </li>
+                <li><%= link_to "My Orders",'#'%></li>
+                <%if current_user.horticulturist%>
+                  <li><%= link_to "Received Orders",'#'%></li>
+                <%end%>
+              </ul>
+            </li>
+
+
+
+
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Account
+                <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to 'Edit Profile', edit_user_registration_path %> </li>
+                <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+              </ul>
+            </li>
+
+          <%else%>
+
+            <li>  <%= link_to "Sign Up", new_user_registration_path %> </li>
+            <li> <%= link_to "Login", new_user_session_path%></li>
+          <%end%>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <div class="col-xs-12">
+    <%= yield %>
+  </div>
 
 </body>
 </html>

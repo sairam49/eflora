@@ -17,11 +17,13 @@ Rails.application.routes.draw do
 
   get 'dashboards/new'
 
-  get 'dashboards/edit'
+  get 'dashboards/:id', to: 'dashboards#show', as: 'dashboard'
+  get 'dashboards/:id/edit', to: 'dashboards#edit', as: 'dashboards_edit'
 
   post 'dashboards/create'
 
-  get 'dashboards/show'
+
+  patch 'dashboards/:id/update', to: 'dashboards#update', as: 'dashboards'
 
   get 'requests/new'
   post 'requests/create'

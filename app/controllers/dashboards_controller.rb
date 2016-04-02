@@ -20,12 +20,24 @@ class DashboardsController < ApplicationController
   end
 
   def edit
+    @dashboard = Dashboard.find(params[:id])
   end
 
   def show
-    @present = Dashboard.where(:user_id => current_user.id).first
-
+    @dashboard = Dashboard.where(:user_id => current_user.id).first
   end
+
+ def update
+  @dashboard = Dashboard.find(params[:id])
+
+  if @dashboard.update(dashboard_params)
+    redirect_to @dashboard
+  else
+    render 'edit'
+  end
+end
+
+
 
  private
 
