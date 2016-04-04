@@ -8,4 +8,12 @@ class User < ActiveRecord::Base
   has_many :services
   has_one  :dashboard
   has_many :products
+
+  def is_horitculturist?
+    horticulturist == true
+  end
+
+  def has_horticultirist_profile?
+    dashboard.present?
+  end
 end

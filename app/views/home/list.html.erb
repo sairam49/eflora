@@ -1,4 +1,4 @@
-<h2>Services :</h2>
+<h2>Horticulturists:</h2>
 
 <div class="container">
   <div class="row">
@@ -7,18 +7,16 @@
         <table class="table table-bordered table-hover">
           <thead>
             <tr>
-              <th>Service</th>
-              <th>Description</th>
-              <th>Delete Service</th>
+              <th>Name</th>
+              <th>Profile</th>
             </tr>
           </thead>
           <tbody>
 
- <% @services.each do |s| %>
+ <% @horticulturists.each do |h| %>
       <tr>
-        <td><%= s.service %></td>
-        <td><%= s.description %></td>
-        <td><%= link_to 'Destroy', service_path(s), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= h %></td>
+        <td><%= link_to 'View', '#' %></td>
       </tr>
     <% end %>
 

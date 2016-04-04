@@ -1,2 +1,38 @@
-<h1>Products#edit</h1>
-<p>Find me in app/views/products/edit.html.erb</p>
+<br/>
+<h2>Edit Product : </h2>
+<br/>
+<%= form_for :product,url: products_path(@product),method: :patch do |f|%>
+
+ <div class="field">
+    <%= f.label :url %><br>
+    <%= f.text_field :url %>
+  </div>
+
+  <br/>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+
+  <br/>
+
+<div class="field">
+    <%= f.label :cost %><br>
+    <%= f.text_field :cost %>
+</div>
+
+<br/>
+
+<div class="field">
+    <%= f.label :quantity %><br>
+    <%= f.text_field :quantity %>
+  </div>
+
+  <br/>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<%end%>

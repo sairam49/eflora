@@ -1,40 +1,35 @@
 Rails.application.routes.draw do
   get 'products/new'
-
-  post 'products/create'
-
-  get 'products/edit'
-
+  get 'products/:id/edit', to: 'products#edit', as: 'products_edit'
   get 'products/index'
+  post 'products/create'
+  patch 'products/:id/update', to: 'products#update', as: 'products'
+  delete 'products/:id', to: 'products#destroy', as: 'product'
+
 
   get 'services/new'
-
   get 'services/index'
-
+  get 'services/:id/edit' , to: 'services#edit' , as: 'services_edit'
   post 'services/create'
+  patch 'services/:id/update', to: 'services#update', as: 'services'
+  delete 'services/:id', to: 'services#destroy', as: 'service'
 
-  get 'services/edit'
 
   get 'dashboards/new'
-
   get 'dashboards/:id', to: 'dashboards#show', as: 'dashboard'
   get 'dashboards/:id/edit', to: 'dashboards#edit', as: 'dashboards_edit'
-
   post 'dashboards/create'
-
-
   patch 'dashboards/:id/update', to: 'dashboards#update', as: 'dashboards'
 
   get 'requests/new'
+  get 'requests/index'
   post 'requests/create'
 
-  get 'requests/index'
-
   get 'designs/new'
-
   post 'designs/show'
 
   root 'home#index'
+  get 'home/list'
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
