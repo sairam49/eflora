@@ -5,7 +5,7 @@ class HomeController < ApplicationController
 
   def list
     @count = Dashboard.count
-    @horticulturists = Dashboard.select("name,id")
+    @horticulturists = Dashboard.all
   end
 
   def show

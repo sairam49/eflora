@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'agreements/new'
+  post 'agreements/create'
+  get 'agreements/index'
+  get 'agreements/received'
+
   get 'products/new'
   get 'products/:id/edit', to: 'products#edit', as: 'products_edit'
   get 'products/index'

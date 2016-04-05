@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  horticulturist: MyString
+  policy: MyText
+  flowers: MyText
+  from: MyString
+
+two:
+  horticulturist: MyString
+  policy: MyText
+  flowers: MyText
+  from: MyString

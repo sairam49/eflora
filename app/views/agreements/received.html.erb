@@ -1,0 +1,30 @@
+<h2>Orders You Received</h2>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+          <th>Date</th>
+          <th>Customer</th>
+          <th>Policy</th>
+          <th>Order</th>
+             </tr>
+          </thead>
+          <tbody>
+  <% @received.each do |r| %>
+    <tr>
+        <td><%= r.created_at %></td>
+        <td><%= r.from %></td>
+        <td><%= r.policy%></td>
+        <td><%= r.flowers %></td>
+    </tr>
+    <% end %>
+         </tbody>
+        </table>
+      </div><!--end of .table-responsive-->
+    </div>
+  </div>
+</div>

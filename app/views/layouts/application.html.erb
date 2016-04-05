@@ -44,11 +44,11 @@
                 <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><%= link_to "Place Request Order",requests_new_path %></li>
-                <li><%= link_to "Agreement Order",'#'%></li>
+                <li><%= link_to "Agreement Order",agreements_new_path%></li>
                 <li><%= link_to "View Request Orders",requests_index_path %> </li>
-                <li><%= link_to "My Orders",'#'%></li>
+                <li><%= link_to "My Orders",agreements_index_path%></li>
                 <%if current_user.horticulturist%>
-                  <li><%= link_to "Received Orders",'#'%></li>
+                  <li><%= link_to "Received Orders",agreements_received_path%></li>
                 <%end%>
               </ul>
             </li>

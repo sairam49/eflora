@@ -1,0 +1,30 @@
+<h2>Orders You Placed</h2>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+          <th>Date</th>
+          <th>Horticulturist</th>
+          <th>Policy</th>
+          <th>Order</th>
+             </tr>
+          </thead>
+          <tbody>
+  <% @agreements.each do |o| %>
+      <tr>
+        <td><%= o.created_at %></td>
+        <td><%= o.horticulturist %></td>
+        <td><%= o.policy%></td>
+        <td><%= o.flowers %></td>
+      </tr>
+    <% end %>
+         </tbody>
+        </table>
+      </div><!--end of .table-responsive-->
+    </div>
+  </div>
+</div>
