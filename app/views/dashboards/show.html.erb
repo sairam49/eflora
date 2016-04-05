@@ -16,14 +16,14 @@
 </p>
 
 <br/>
-<%if current_user.horticulturist %>
-<%= link_to 'Add Services',services_new_path %>
-<br/>
-<%= link_to 'Add Products',products_new_path %>
-<%end%>
-<br/>
 <%= link_to 'My Services',services_index_path %>
 <br/>
 <%= link_to 'My Products',products_index_path %>
 <br/>
+<%if current_user.id %>
+<%= link_to 'Add Services',services_new_path %>
+<br/>
+<%= link_to 'Add Products',products_new_path %>
+<br/>
 <%= link_to 'Edit', dashboards_edit_path(@dashboard) %>
+<%end%>

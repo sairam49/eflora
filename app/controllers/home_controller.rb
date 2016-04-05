@@ -4,7 +4,8 @@ class HomeController < ApplicationController
 
 
   def list
-    @horticulturists = Dashboard.pluck(:name)
+    @count = Dashboard.count
+    @horticulturists = Dashboard.select("name,id")
   end
 
   def show

@@ -2,6 +2,7 @@
 <h2>Edit Profile Information : </h2>
 <br/>
 <%= form_for :dashboard,url: dashboards_path(@dashboard),method: :patch do |f|%>
+ <%= render 'shared/error_messages', object: @dashboard %>
 
   <div class="field">
     <%= f.label :name %><br>

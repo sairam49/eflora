@@ -10,7 +10,7 @@
               <th>Image</th>
               <th>Product</th>
               <th>Cost</th>
-              <th>Delete Product</th>
+              <th>Options</th>
             </tr>
           </thead>
           <tbody>
@@ -20,7 +20,9 @@
         <td><%= image_tag p.url, height:50, width:50%></td>
         <td><%= p.title %></td>
         <td><%= p.cost%></td>
-        <td><%= link_to 'Destroy', product_path(p), method: :delete, data: { confirm: 'Are you sure?' } %> </td>
+        <td><%= link_to 'Destroy', product_path(p), method: :delete, data: { confirm: 'Are you sure?' } %>   |
+                <%= link_to 'Edit', products_edit_path(p) %>
+        </td>
       </tr>
     <% end %>
 

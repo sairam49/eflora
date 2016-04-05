@@ -1,4 +1,7 @@
 <h2>Horticulturists:</h2>
+            <%if @count.nil?%>
+              <h3>There are no horticulturists presently </h3>
+            <%else%>
 
 <div class="container">
   <div class="row">
@@ -15,16 +18,16 @@
 
  <% @horticulturists.each do |h| %>
       <tr>
-        <td><%= h %></td>
-        <td><%= link_to 'View', '#' %></td>
+        <td><%= h.name %></td>
+        <td><%= link_to 'View', dashboard_path(h.id) %></td>
       </tr>
     <% end %>
-
          </tbody>
         </table>
       </div><!--end of .table-responsive-->
     </div>
   </div>
 </div>
+  <%end%>
 
 

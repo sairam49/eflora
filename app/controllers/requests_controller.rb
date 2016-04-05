@@ -1,5 +1,6 @@
 class RequestsController < ApplicationController
   def new
+    @request = Request.new
   end
 
   def create
@@ -16,6 +17,7 @@ class RequestsController < ApplicationController
 
 
   def index
+    @count = Request.count
     @requests = Request.all
   end
 

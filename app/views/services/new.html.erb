@@ -1,6 +1,7 @@
 <br/>
 <h2>Create Your Service : </h2>
 <%= form_for(:service,url: services_create_path) do |f| %>
+ <%= render 'shared/error_messages', object: @service %>
 
   <div class="field">
     <%= f.label :service %><br>

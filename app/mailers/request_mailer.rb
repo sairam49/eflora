@@ -1,0 +1,4 @@
+class RequestMailer < ApplicationMailer
+
+
+end

@@ -3,7 +3,7 @@
 <br/>
 <br/>
 <%= form_for(:request,url:requests_create_path) do |f|%>
-
+<%= render 'shared/error_messages', object: @request%>
   <div>
     <%= f.label :order %>
     <br/>

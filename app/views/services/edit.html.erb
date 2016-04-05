@@ -2,7 +2,7 @@
 <h2>Edit Service : </h2>
 <br/>
 <%= form_for :service,url: services_path(@service),method: :patch do |f|%>
-
+ <%= render 'shared/error_messages', object: @service %>
   <div class="field">
     <%= f.label :service %><br>
     <%= f.text_field :service %>

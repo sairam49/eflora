@@ -1,15 +1,16 @@
 class DashboardsController < ApplicationController
   def new
+    @dashboard = Dashboard.new
   end
 
   def create
     @record = Dashboard.where(:user_id => current_user.id).first
 
     if @record.nil?
-    @value = Dashboard.new(dashboard_params)
-       if @value.save
+    @dashboard = Dashboard.new(dashboard_params)
+       if @dashboard.save
        update = current_user.id
-       @value.update_attribute(:user_id,update)
+       @dashboard.update_attribute(:user_id,update)
        else
        render 'new'
        end
