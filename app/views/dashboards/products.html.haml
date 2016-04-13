@@ -1,0 +1,39 @@
+%h2 Products :
+- if @products.any?
+  .container
+    .row
+      .col-xs-12
+        .table-responsive
+          %table.table.table-bordered.table-hover
+            %thead
+              %tr
+                %th Image
+                %th Product
+                %th Cost
+                %th{:colspan => "2"} Qty
+            %tbody
+              - @products.each do |p|
+                %tr{:id => p.id}
+                  %td= image_tag p.url, height:50, width:50
+                  %td.title= p.title
+                  %td= p.cost
+                  - if current_user ==  Dashboard.find(params[:id]).user
+                    %td
+                      = link_to 'Destroy', product_path(p), method: :delete, data: { confirm: 'Are you sure?' }
+                      |
+                      = link_to 'Edit', products_edit_path(p)
+                  - else
+                    %td
+                      = form_tag [:add_item, :cart], remote: true do |f|
+                        = hidden_field_tag "item[id]", p.id
+
+                        .input-group
+                          = number_field_tag "item[quantity]", 1, class: "form-control", min: 1
+
+                          .input-group-btn
+                            = button_tag "Add to Cart", class: "btn btn-primary"
+        / end of .table-responsive
+- else
+  %p There are no products
+
+

@@ -1,0 +1,50 @@
+<% if @order_item.present? && @order_item.errors.any? %>
+  <div class="alert alert-danger">
+    <ul>
+    <% @order_item.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<% if @order_items.blank? %>
+  <p class="text-center">
+    There are no items in your shopping cart.
+  </p>
+<% else %>
+  <% @order_items.each do |order_item| %>
+
+<div class="well">
+
+  <div class="row">
+    <div class="col-xs-8">
+      <h4><%= order_item[:product_name] %></h4>
+    </div>
+    <div class="col-xs-4">
+
+      <%= form_tag update_item_cart_path, method: :post  do |f| %>
+        <h4 class="text-right">Unit Price: <span style="color: green"><%= order_item[:unit_price] %>  </span></h4>
+        <div class="row">
+          <div class="col-xs-4">
+            <%= number_field_tag :quantity, order_item[:quantity], class: "form-control", min: 1 %>
+            <%= hidden_field_tag :product_id, order_item[:product_id] %>
+          </div>
+          <div class="col-xs-8 text-right">
+            <div class="btn-group">
+              <%= submit_tag "Update Quantity",class: "btn btn-primary" %>
+              <%= link_to "Delete", remove_item_cart_path(product_id: order_item[:product_id]), { data: { confirm: "Are you sure you wish to delete the product '#{order_item[:product_name]}' from your cart?" }, method: :post, class: "btn btn-danger" } %>
+            </div>
+          </div>
+        </div>
+        <h4 class="text-right">Total Price: <span style="color: green"><%= number_to_currency order_item[:total_price] %></span></h4>
+      <% end %>
+    </div>
+
+  </div>
+</div>
+
+
+
+ <% end %>
+<% end %>

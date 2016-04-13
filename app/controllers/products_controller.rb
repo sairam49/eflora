@@ -41,7 +41,7 @@ end
  def destroy
     @product.destroy
     respond_to do |format|
-      format.html { redirect_to products_index_path, notice: 'Product was successfully deleted.' }
+      format.html { redirect_to request.referer, notice: 'Product was successfully deleted.' }
     end
   end
 

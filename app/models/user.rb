@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_one  :dashboard
   has_many :products
   has_many :agreements
+  has_many :orders
 
   def is_horitculturist?
     horticulturist == true
