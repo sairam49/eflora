@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   #post 'order_items/create'
   #patch 'order_items/:id/update', to: 'order_items#update' , as: 'order_items'
   #delete 'order_items/:id', to: 'order_items#destroy', as: 'order_item'
-  resources :order_items, only: [:create, :update, :destroy]
+ # resources :order_items, only: [:create, :update, :destroy]
 
   #get 'carts/:id', to: 'carts#show' , as: 'carts'
 
@@ -45,7 +45,10 @@ Rails.application.routes.draw do
 
   get 'requests/new'
   get '/requests' , to: 'requests#index', as: 'requests'
+  get 'requests/:id', to: 'requests#show', as: 'request'
   post 'requests/create'
+
+  post 'comments/create'
 
   get 'designs/new'
   post 'designs/show'

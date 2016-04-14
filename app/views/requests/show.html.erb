@@ -1,0 +1,11 @@
+<h2>Request : <%= @request.order %></h2>
+<h2> By     : <%= User.where(:id => @request.user_id).pluck(:email)%></h2>
+
+<div id="comments">
+		<h2><%= @request.comments.count %> Comments</h2>
+		<%= render @request.comments %>
+
+		<h3>Add a comment:</h3>
+		<%= render "comments/form" %>
+	</div>
+

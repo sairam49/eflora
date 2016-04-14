@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   has_many :products
   has_many :agreements
   has_many :orders
+  has_many :comments
+  has_many :requests
 
   def is_horitculturist?
     horticulturist == true

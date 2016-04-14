@@ -15,10 +15,13 @@ class RequestsController < ApplicationController
     end
   end
 
-
   def index
     @count = Request.count
     @requests = Request.all
+  end
+
+  def show
+    @request = Request.find(params[:id])
   end
 
  private

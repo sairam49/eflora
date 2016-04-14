@@ -12,7 +12,7 @@
             <tr>
               <th>Date</th>
               <th>Order</th>
-              <th>Id</th>
+              <th>View</th>
             </tr>
           </thead>
           <tbody>
@@ -20,7 +20,7 @@
       <tr>
         <td><%= r.created_at %></td>
         <td><%= r.order %></td>
-        <td><%= r.user_id%></td>
+        <td><%= link_to 'View',request_path(r.id)%></td>
       </tr>
     <% end %>
 

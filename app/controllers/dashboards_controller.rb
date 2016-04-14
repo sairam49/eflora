@@ -59,10 +59,6 @@ class DashboardsController < ApplicationController
     @services = @dashboard.try(:user).try(:services)
   end
 
-  def cart
-
-
-  end
 
   private
     def dashboard_params
